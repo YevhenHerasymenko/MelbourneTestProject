@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15DE24A6F34B98F052145A25 /* Pods_MelbourneTestProjectCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496A57207F416BE83BFD0517 /* Pods_MelbourneTestProjectCore.framework */; };
 		ABA131A520BC734000F53C9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA131A420BC734000F53C9F /* AppDelegate.swift */; };
 		ABA131A720BC734000F53C9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA131A620BC734000F53C9F /* ViewController.swift */; };
 		ABA131AA20BC734000F53C9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA131A820BC734000F53C9F /* Main.storyboard */; };
@@ -61,6 +62,8 @@
 /* Begin PBXFileReference section */
 		09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF470BB0D38272B5FDB418 /* Pods-MelbourneTestProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProjectTests/Pods-MelbourneTestProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		496A57207F416BE83BFD0517 /* Pods_MelbourneTestProjectCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62C1178035A61DA92A7EF87C /* Pods-MelbourneTestProjectCore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProjectCore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProjectCore/Pods-MelbourneTestProjectCore.debug.xcconfig"; sourceTree = "<group>"; };
 		6E995A233AF6279C398E3A82 /* Pods-MelbourneTestProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProjectUITests/Pods-MelbourneTestProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73C7C4D1F2791364F2C0E4D8 /* Pods_MelbourneTestProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94D267B3882D0717AD9DCAC8 /* Pods-MelbourneTestProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProjectTests/Pods-MelbourneTestProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.debug.xcconfig"; sourceTree = "<group>"; };
+		FE54D64277FD45CD0F3B1789 /* Pods-MelbourneTestProjectCore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProjectCore.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProjectCore/Pods-MelbourneTestProjectCore.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15DE24A6F34B98F052145A25 /* Pods_MelbourneTestProjectCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +125,8 @@
 				37EF470BB0D38272B5FDB418 /* Pods-MelbourneTestProjectTests.release.xcconfig */,
 				6E995A233AF6279C398E3A82 /* Pods-MelbourneTestProjectUITests.debug.xcconfig */,
 				A05D115C759A31B33658CA76 /* Pods-MelbourneTestProjectUITests.release.xcconfig */,
+				62C1178035A61DA92A7EF87C /* Pods-MelbourneTestProjectCore.debug.xcconfig */,
+				FE54D64277FD45CD0F3B1789 /* Pods-MelbourneTestProjectCore.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -183,6 +190,7 @@
 				09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */,
 				C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */,
 				73C7C4D1F2791364F2C0E4D8 /* Pods_MelbourneTestProjectUITests.framework */,
+				496A57207F416BE83BFD0517 /* Pods_MelbourneTestProjectCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -210,6 +218,7 @@
 				ABA1319E20BC734000F53C9F /* Frameworks */,
 				ABA1319F20BC734000F53C9F /* Resources */,
 				ABA131F320BC781500F53C9F /* Embed Frameworks */,
+				D36408902793DF50F6BE3945 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -225,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABA131F220BC781500F53C9F /* Build configuration list for PBXNativeTarget "MelbourneTestProjectCore" */;
 			buildPhases = (
+				5C916ECBA637586A574BB5E5 /* [CP] Check Pods Manifest.lock */,
 				ABA131D220BC781500F53C9F /* Sources */,
 				ABA131D320BC781500F53C9F /* Frameworks */,
 				ABA131D420BC781500F53C9F /* Headers */,
@@ -344,6 +354,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C916ECBA637586A574BB5E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MelbourneTestProjectCore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D36408902793DF50F6BE3945 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -535,6 +587,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z323B543DW;
 				INFOPLIST_FILE = MelbourneTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,6 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z323B543DW;
 				INFOPLIST_FILE = MelbourneTestProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,6 +621,7 @@
 		};
 		ABA131EE20BC781500F53C9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62C1178035A61DA92A7EF87C /* Pods-MelbourneTestProjectCore.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -578,6 +633,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MelbourneTestProjectCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +651,7 @@
 		};
 		ABA131EF20BC781500F53C9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE54D64277FD45CD0F3B1789 /* Pods-MelbourneTestProjectCore.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -606,6 +663,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = MelbourneTestProjectCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,0 +1,6 @@
+exclude:
+  - '**Tests.swift'   
+  - Pods       
+  - NetStreamCoreTests
+except:
+  - trailing-whitespace

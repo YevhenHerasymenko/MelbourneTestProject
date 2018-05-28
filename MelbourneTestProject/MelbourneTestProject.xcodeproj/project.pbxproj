@@ -18,6 +18,14 @@
 		ABA131E920BC781500F53C9F /* MelbourneTestProjectCore.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA131D920BC781500F53C9F /* MelbourneTestProjectCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		ABA131EC20BC781500F53C9F /* MelbourneTestProjectCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA131D720BC781500F53C9F /* MelbourneTestProjectCore.framework */; };
 		ABA131ED20BC781500F53C9F /* MelbourneTestProjectCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABA131D720BC781500F53C9F /* MelbourneTestProjectCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ABA131FA20BC7BB700F53C9F /* StateTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA131F920BC7BB700F53C9F /* StateTransformer.swift */; };
+		ABA131FC20BC7BE600F53C9F /* ViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA131FB20BC7BE600F53C9F /* ViewControllerModel.swift */; };
+		ABA131FF20BC7C0D00F53C9F /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA131FE20BC7C0D00F53C9F /* AppState.swift */; };
+		ABA1320120BC7C4700F53C9F /* SideEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320020BC7C4700F53C9F /* SideEffects.swift */; };
+		ABA1320320BC7CB600F53C9F /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320220BC7CB600F53C9F /* Store.swift */; };
+		ABA1320620BC7D0B00F53C9F /* NetworkSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */; };
+		ABA1320820BC7D7C00F53C9F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320720BC7D7C00F53C9F /* NetworkError.swift */; };
+		ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */; };
 		FDECF6763056948A6F80C743 /* Pods_MelbourneTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +89,14 @@
 		ABA131DF20BC781500F53C9F /* MelbourneTestProjectCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelbourneTestProjectCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA131E620BC781500F53C9F /* MelbourneTestProjectCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelbourneTestProjectCoreTests.swift; sourceTree = "<group>"; };
 		ABA131E820BC781500F53C9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA131F920BC7BB700F53C9F /* StateTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTransformer.swift; sourceTree = "<group>"; };
+		ABA131FB20BC7BE600F53C9F /* ViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerModel.swift; sourceTree = "<group>"; };
+		ABA131FE20BC7C0D00F53C9F /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		ABA1320020BC7C4700F53C9F /* SideEffects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffects.swift; sourceTree = "<group>"; };
+		ABA1320220BC7CB600F53C9F /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManager.swift; sourceTree = "<group>"; };
+		ABA1320720BC7D7C00F53C9F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFlow.swift; sourceTree = "<group>"; };
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +172,7 @@
 		ABA131A320BC734000F53C9F /* MelbourneTestProject */ = {
 			isa = PBXGroup;
 			children = (
+				ABA131F720BC7BA200F53C9F /* Core */,
 				ABA131A420BC734000F53C9F /* AppDelegate.swift */,
 				ABA131A620BC734000F53C9F /* ViewController.swift */,
 				ABA131A820BC734000F53C9F /* Main.storyboard */,
@@ -169,6 +186,9 @@
 		ABA131D820BC781500F53C9F /* MelbourneTestProjectCore */ = {
 			isa = PBXGroup;
 			children = (
+				ABA1320920BC7DA700F53C9F /* Flows */,
+				ABA1320420BC7CDB00F53C9F /* Network */,
+				ABA131FD20BC7BFD00F53C9F /* ReSwift */,
 				ABA131D920BC781500F53C9F /* MelbourneTestProjectCore.h */,
 				ABA131DA20BC781500F53C9F /* Info.plist */,
 			);
@@ -182,6 +202,50 @@
 				ABA131E820BC781500F53C9F /* Info.plist */,
 			);
 			path = MelbourneTestProjectCoreTests;
+			sourceTree = "<group>";
+		};
+		ABA131F720BC7BA200F53C9F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ABA131F820BC7BA700F53C9F /* ReSwift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ABA131F820BC7BA700F53C9F /* ReSwift */ = {
+			isa = PBXGroup;
+			children = (
+				ABA131F920BC7BB700F53C9F /* StateTransformer.swift */,
+				ABA131FB20BC7BE600F53C9F /* ViewControllerModel.swift */,
+			);
+			path = ReSwift;
+			sourceTree = "<group>";
+		};
+		ABA131FD20BC7BFD00F53C9F /* ReSwift */ = {
+			isa = PBXGroup;
+			children = (
+				ABA131FE20BC7C0D00F53C9F /* AppState.swift */,
+				ABA1320020BC7C4700F53C9F /* SideEffects.swift */,
+				ABA1320220BC7CB600F53C9F /* Store.swift */,
+			);
+			path = ReSwift;
+			sourceTree = "<group>";
+		};
+		ABA1320420BC7CDB00F53C9F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */,
+				ABA1320720BC7D7C00F53C9F /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		ABA1320920BC7DA700F53C9F /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */,
+			);
+			path = Flows;
 			sourceTree = "<group>";
 		};
 		D3C70C72DEEDB78227EFD60F /* Frameworks */ = {
@@ -285,6 +349,7 @@
 					};
 					ABA131D620BC781500F53C9F = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
 					};
 					ABA131DE20BC781500F53C9F = {
 						CreatedOnToolsVersion = 9.3.1;
@@ -435,8 +500,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA131FC20BC7BE600F53C9F /* ViewControllerModel.swift in Sources */,
 				ABA131A720BC734000F53C9F /* ViewController.swift in Sources */,
 				ABA131A520BC734000F53C9F /* AppDelegate.swift in Sources */,
+				ABA131FA20BC7BB700F53C9F /* StateTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +511,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */,
+				ABA1320320BC7CB600F53C9F /* Store.swift in Sources */,
+				ABA131FF20BC7C0D00F53C9F /* AppState.swift in Sources */,
+				ABA1320120BC7C4700F53C9F /* SideEffects.swift in Sources */,
+				ABA1320620BC7D0B00F53C9F /* NetworkSessionManager.swift in Sources */,
+				ABA1320820BC7D7C00F53C9F /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,6 +686,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z323B543DW;
@@ -633,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z323B543DW;
@@ -653,6 +728,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62C1178035A61DA92A7EF87C /* Pods-MelbourneTestProjectCore.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -672,6 +748,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = yevhenherasymenko.MelbourneTestProjectCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -683,6 +760,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FE54D64277FD45CD0F3B1789 /* Pods-MelbourneTestProjectCore.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

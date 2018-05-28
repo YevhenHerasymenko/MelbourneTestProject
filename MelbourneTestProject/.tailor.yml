@@ -4,3 +4,4 @@ exclude:
   - NetStreamCoreTests
 except:
   - trailing-whitespace
+  - upper-camel-case

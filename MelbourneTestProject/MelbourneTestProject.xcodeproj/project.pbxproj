@@ -35,6 +35,10 @@
 		ABA1321E20BC832F00F53C9F /* MockSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321D20BC832F00F53C9F /* MockSessionManager.swift */; };
 		ABA1322020BC845700F53C9F /* StubSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321F20BC845700F53C9F /* StubSubscriber.swift */; };
 		ABA1322220BC84AE00F53C9F /* ErrorFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322120BC84AE00F53C9F /* ErrorFlowTests.swift */; };
+		ABA1322820BC8C2200F53C9F /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322720BC8C2200F53C9F /* Fact.swift */; };
+		ABA1322A20BC8CC200F53C9F /* FactGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322920BC8CC200F53C9F /* FactGroup.swift */; };
+		ABA1322C20BC976500F53C9F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322B20BC976500F53C9F /* Endpoint.swift */; };
+		ABA1322E20BC983600F53C9F /* FactsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322D20BC983600F53C9F /* FactsFlow.swift */; };
 		FDECF6763056948A6F80C743 /* Pods_MelbourneTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +119,10 @@
 		ABA1321D20BC832F00F53C9F /* MockSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSessionManager.swift; sourceTree = "<group>"; };
 		ABA1321F20BC845700F53C9F /* StubSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubSubscriber.swift; sourceTree = "<group>"; };
 		ABA1322120BC84AE00F53C9F /* ErrorFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFlowTests.swift; sourceTree = "<group>"; };
+		ABA1322720BC8C2200F53C9F /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
+		ABA1322920BC8CC200F53C9F /* FactGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactGroup.swift; sourceTree = "<group>"; };
+		ABA1322B20BC976500F53C9F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		ABA1322D20BC983600F53C9F /* FactsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsFlow.swift; sourceTree = "<group>"; };
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 		ABA131D820BC781500F53C9F /* MelbourneTestProjectCore */ = {
 			isa = PBXGroup;
 			children = (
+				ABA1322620BC8C1100F53C9F /* Models */,
 				ABA1320C20BC7EBE00F53C9F /* Extensions */,
 				ABA1320920BC7DA700F53C9F /* Flows */,
 				ABA1320420BC7CDB00F53C9F /* Network */,
@@ -260,6 +269,7 @@
 			children = (
 				ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */,
 				ABA1320720BC7D7C00F53C9F /* NetworkError.swift */,
+				ABA1322B20BC976500F53C9F /* Endpoint.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -268,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */,
+				ABA1322D20BC983600F53C9F /* FactsFlow.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -297,6 +308,16 @@
 				ABA1321B20BC81EC00F53C9F /* images.json */,
 			);
 			path = jsons;
+			sourceTree = "<group>";
+		};
+		ABA1322620BC8C1100F53C9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ABA1322720BC8C2200F53C9F /* Fact.swift */,
+				ABA1322920BC8CC200F53C9F /* FactGroup.swift */,
+			);
+			name = Models;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		D3C70C72DEEDB78227EFD60F /* Frameworks */ = {
@@ -567,9 +588,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABA1322A20BC8CC200F53C9F /* FactGroup.swift in Sources */,
 				ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */,
 				ABA1320320BC7CB600F53C9F /* Store.swift in Sources */,
 				ABA131FF20BC7C0D00F53C9F /* AppState.swift in Sources */,
+				ABA1322C20BC976500F53C9F /* Endpoint.swift in Sources */,
+				ABA1322820BC8C2200F53C9F /* Fact.swift in Sources */,
+				ABA1322E20BC983600F53C9F /* FactsFlow.swift in Sources */,
 				ABA1320120BC7C4700F53C9F /* SideEffects.swift in Sources */,
 				ABA1320E20BC7ED100F53C9F /* String.swift in Sources */,
 				ABA1320620BC7D0B00F53C9F /* NetworkSessionManager.swift in Sources */,

@@ -63,4 +63,3 @@ class ErrorFlowTests: XCTestCase {
         store.unsubscribe(stubSubscriber)
     }
 }
-

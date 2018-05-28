@@ -26,6 +26,7 @@
 		ABA1320620BC7D0B00F53C9F /* NetworkSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */; };
 		ABA1320820BC7D7C00F53C9F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320720BC7D7C00F53C9F /* NetworkError.swift */; };
 		ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */; };
+		ABA1320E20BC7ED100F53C9F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320D20BC7ED100F53C9F /* String.swift */; };
 		FDECF6763056948A6F80C743 /* Pods_MelbourneTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +98,7 @@
 		ABA1320520BC7D0B00F53C9F /* NetworkSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManager.swift; sourceTree = "<group>"; };
 		ABA1320720BC7D7C00F53C9F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFlow.swift; sourceTree = "<group>"; };
+		ABA1320D20BC7ED100F53C9F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 		ABA131D820BC781500F53C9F /* MelbourneTestProjectCore */ = {
 			isa = PBXGroup;
 			children = (
+				ABA1320C20BC7EBE00F53C9F /* Extensions */,
 				ABA1320920BC7DA700F53C9F /* Flows */,
 				ABA1320420BC7CDB00F53C9F /* Network */,
 				ABA131FD20BC7BFD00F53C9F /* ReSwift */,
@@ -246,6 +249,14 @@
 				ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */,
 			);
 			path = Flows;
+			sourceTree = "<group>";
+		};
+		ABA1320C20BC7EBE00F53C9F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ABA1320D20BC7ED100F53C9F /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D3C70C72DEEDB78227EFD60F /* Frameworks */ = {
@@ -515,6 +526,7 @@
 				ABA1320320BC7CB600F53C9F /* Store.swift in Sources */,
 				ABA131FF20BC7C0D00F53C9F /* AppState.swift in Sources */,
 				ABA1320120BC7C4700F53C9F /* SideEffects.swift in Sources */,
+				ABA1320E20BC7ED100F53C9F /* String.swift in Sources */,
 				ABA1320620BC7D0B00F53C9F /* NetworkSessionManager.swift in Sources */,
 				ABA1320820BC7D7C00F53C9F /* NetworkError.swift in Sources */,
 			);

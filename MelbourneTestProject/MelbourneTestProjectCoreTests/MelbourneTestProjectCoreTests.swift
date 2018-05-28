@@ -1,15 +1,15 @@
 //
-//  MelbourneTestProjectTests.swift
-//  MelbourneTestProjectTests
+//  MelbourneTestProjectCoreTests.swift
+//  MelbourneTestProjectCoreTests
 //
 //  Created by Yevhen Herasymenko on 5/28/18.
 //  Copyright © 2018 Yevhen Herasymenko. All rights reserved.
 //
 
 import XCTest
-@testable import MelbourneTestProject
+@testable import MelbourneTestProjectCore
 
-class MelbourneTestProjectTests: XCTestCase {
+class MelbourneTestProjectCoreTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

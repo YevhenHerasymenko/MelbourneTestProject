@@ -27,6 +27,10 @@
 		ABA1320820BC7D7C00F53C9F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320720BC7D7C00F53C9F /* NetworkError.swift */; };
 		ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */; };
 		ABA1320E20BC7ED100F53C9F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1320D20BC7ED100F53C9F /* String.swift */; };
+		ABA1321120BC7F9100F53C9F /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321020BC7F9100F53C9F /* SessionManager.swift */; };
+		ABA1321320BC7FBB00F53C9F /* SessionManagerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321220BC7FBB00F53C9F /* SessionManagerBuilder.swift */; };
+		ABA1321520BC7FDC00F53C9F /* RequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321420BC7FDC00F53C9F /* RequestRetrier.swift */; };
+		ABA1321720BC804F00F53C9F /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321620BC804F00F53C9F /* NetworkError.swift */; };
 		FDECF6763056948A6F80C743 /* Pods_MelbourneTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +103,10 @@
 		ABA1320720BC7D7C00F53C9F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		ABA1320A20BC7DB500F53C9F /* ErrorFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFlow.swift; sourceTree = "<group>"; };
 		ABA1320D20BC7ED100F53C9F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		ABA1321020BC7F9100F53C9F /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		ABA1321220BC7FBB00F53C9F /* SessionManagerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerBuilder.swift; sourceTree = "<group>"; };
+		ABA1321420BC7FDC00F53C9F /* RequestRetrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRetrier.swift; sourceTree = "<group>"; };
+		ABA1321620BC804F00F53C9F /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC1E2BAF31AEA0D1F069A7D3 /* Pods-MelbourneTestProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.release.xcconfig"; sourceTree = "<group>"; };
 		E5744A875736BCE9BC8AC9B7 /* Pods-MelbourneTestProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MelbourneTestProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MelbourneTestProject/Pods-MelbourneTestProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +218,7 @@
 		ABA131F720BC7BA200F53C9F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				ABA1320F20BC7F7F00F53C9F /* Network */,
 				ABA131F820BC7BA700F53C9F /* ReSwift */,
 			);
 			path = Core;
@@ -257,6 +266,17 @@
 				ABA1320D20BC7ED100F53C9F /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ABA1320F20BC7F7F00F53C9F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				ABA1321020BC7F9100F53C9F /* SessionManager.swift */,
+				ABA1321220BC7FBB00F53C9F /* SessionManagerBuilder.swift */,
+				ABA1321420BC7FDC00F53C9F /* RequestRetrier.swift */,
+				ABA1321620BC804F00F53C9F /* NetworkError.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		D3C70C72DEEDB78227EFD60F /* Frameworks */ = {
@@ -512,8 +532,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA131FC20BC7BE600F53C9F /* ViewControllerModel.swift in Sources */,
+				ABA1321720BC804F00F53C9F /* NetworkError.swift in Sources */,
 				ABA131A720BC734000F53C9F /* ViewController.swift in Sources */,
+				ABA1321320BC7FBB00F53C9F /* SessionManagerBuilder.swift in Sources */,
 				ABA131A520BC734000F53C9F /* AppDelegate.swift in Sources */,
+				ABA1321520BC7FDC00F53C9F /* RequestRetrier.swift in Sources */,
+				ABA1321120BC7F9100F53C9F /* SessionManager.swift in Sources */,
 				ABA131FA20BC7BB700F53C9F /* StateTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

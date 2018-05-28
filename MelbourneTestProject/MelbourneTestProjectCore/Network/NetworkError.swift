@@ -17,7 +17,7 @@ public enum NetworkError: Error {
     /// unexpected response
     case badResponse
     /// error during generation app model from server response (JSON)
-    case parsingError
+    case parsingError(Any)
     /// the others cases
     case unknown
 }

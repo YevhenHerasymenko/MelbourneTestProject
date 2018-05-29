@@ -9,7 +9,7 @@
 import Foundation
 
 /// Protocol for view controler models that shows that model should be Equatable
-protocol ViewControllerModel: Equatable {}
+protocol ViewControllerModel {}
 
 /** Additional protocol that can be used in ViewControllerModel realization and shows
  that model provides info about error

@@ -11,8 +11,8 @@ import ReSwift
 public enum FactsFlow {
     
     public struct State: ReSwift.StateType {
-        
-        var factsGroup: FactsGroup?
+        public var factsGroup: FactsGroup?
+        public var isLoading = false
     }
     
     enum Reducer {}
@@ -21,6 +21,7 @@ public enum FactsFlow {
 extension FactsFlow {
     enum Actions: ReSwift.Action {
         case setFacts(FactsGroup?)
+        case setLoadingStatus(Bool)
     }
 }
 
@@ -34,6 +35,8 @@ extension FactsFlow.Reducer {
         switch action {
         case .setFacts(let facts):
             state.factsGroup = facts
+        case .setLoadingStatus(let isLoading):
+            state.isLoading = isLoading
         }
         return state
     }
@@ -47,7 +50,7 @@ extension FactsFlow {
     public static func factsSync() -> ReSwift.Store<AppState>.ActionCreator {
         return { state, store in
             store.dispatch(performLoadingFacts())
-            return nil
+            return Actions.setLoadingStatus(true)
         }
     }
     
@@ -62,8 +65,9 @@ extension FactsFlow {
                 case .success(let factsGroup):
                     callback(set(facts: factsGroup))
                 case .failure(let error):
-                    store.dispatch(interaptLoadingFacts(reason: error))
+                    callback(interaptLoadingFacts(reason: error))
                 }
+                store.dispatch(Actions.setLoadingStatus(false))
             }
         }
     }
@@ -75,7 +79,7 @@ extension FactsFlow {
             return nil
         }
     }
-
+    
     static func interaptLoadingFacts(reason error: NetworkError) -> ReSwift.Store<AppState>.ActionCreator {
         return { state, store in
             return ErrorFlow.Actions.setError(error)

@@ -15,12 +15,14 @@ class FactsCollectionViewController: UICollectionViewController {
     
     enum Status {
         case loading
-        case data(images: [URL?])
+        case data
+        case error(ErrorModel)
     }
     
     struct Model: ViewControllerModel {
         let status: Status
-        let error: ErrorModel?
+        let images: [URL?]?
+        let title: String?
     }
     
     var model: Model? {
@@ -35,6 +37,7 @@ class FactsCollectionViewController: UICollectionViewController {
             collectionView?.prefetchDataSource = self
         }
         setupCollectionView()
+        mainStore.dispatch(FactsFlow.factsSync())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +54,7 @@ class FactsCollectionViewController: UICollectionViewController {
         collectionView?.register(FactCollectionViewCell.nib,
                                  forCellWithReuseIdentifier: FactCollectionViewCell.identifier)
         if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 300)
         }
     }
 
@@ -65,25 +68,23 @@ extension FactsCollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let model = model, case .data(let images) = model.status else {
-                return 0
-        }
-        return images.count
+        return model?.images?.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let model = model,
-            case .data(let images) = model.status,
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FactCollectionViewCell.identifier,
-                                                          for: indexPath) as? FactCollectionViewCell else {
-                fatalError()
+        guard let images = model?.images else {
+            fatalError()
         }
-        cell.model = FactCollectionViewCell.Model(
-            imageUrl: images[indexPath.row],
-            callback: { [unowned collectionView] in
-                collectionView.collectionViewLayout.invalidateLayout()
-        })
+        
+        let callback = { [unowned collectionView] in
+            collectionView.collectionViewLayout.invalidateLayout()
+        }
+        
+        let cell: FactCollectionViewCell = collectionView.dequeCell(
+            forRowAt: indexPath,
+            with: FactCollectionViewCell.Model(imageUrl: images[indexPath.row], callback: callback)
+        )
         return cell
     }
     
@@ -93,8 +94,7 @@ extension FactsCollectionViewController {
 extension FactsCollectionViewController: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        guard let model = model,
-            case .data(let images) = model.status else {
+        guard let images = model?.images else {
             return
         }
         let urls = indexPaths.compactMap { images[$0.row] }
@@ -121,10 +121,11 @@ extension FactsCollectionViewController: ViewControllerModelSupport, ErrorHandle
         case .loading:
             break
         case .data:
-            break
-        }
-        if let error = model.error {
-            showError(model: error, completion: nil)
+            collectionView?.reloadData()
+        case .error(let error):
+            showError(model: error) {
+                mainStore.dispatch(ErrorFlow.resetError())
+            }
         }
     }
     

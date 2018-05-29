@@ -30,46 +30,27 @@ class SessionManager: Alamofire.SessionManager, NetworkSessionManager {
                                        resultCallback: @escaping (NetworkResult<T>) -> Void) {
         request(value)
             .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let result):
-                    guard let resultDictionary = result as? [String: AnyObject] else {
-                        resultCallback(NetworkResult<T>.failure(.badResponse))
-                        return
-                    }
-                    do {
-                        let object = try Mapper<T>().map(JSON: resultDictionary)
-                        resultCallback(NetworkResult<T>.success(object))
-                    } catch {
-                        resultCallback(NetworkResult<T>.failure(.parsingError(resultDictionary)))
-                    }
-                case .failure(let error):
-                    resultCallback(NetworkResult<T>.failure(SessionManager.parse(error: error, with: response)))
-                }
-        }
-    }
-    
-    func perform<T: ImmutableMappable>(request value: NetworkRouting,
-                                       resultCallback: @escaping (NetworkResult<[T]>) -> Void) {
-        request(value)
-            .validate(statusCode: 200..<300)
-            .responseJSON { response in
-                switch response.result {
-                case .success(let result):
-                    guard let resultDictionary = result as? [[String: AnyObject]] else {
-                        resultCallback(NetworkResult<[T]>.failure(.badResponse))
-                        return
-                    }
-                    do {
-                        let object = try Mapper<T>().mapArray(JSONArray: resultDictionary)
-                        resultCallback(NetworkResult<[T]>.success(object))
-                    } catch {
-                        resultCallback(NetworkResult<[T]>.failure(.parsingError(resultDictionary)))
+            .responseString(completionHandler: { (value) in
+                switch value.result {
+                case .success(let stringValue):
+                    if let data = stringValue.data(using: .utf8) {
+                        do {
+                            let json = try JSONSerialization.jsonObject(with: data)
+                            guard let resultDictionary = json as? [String: AnyObject] else {
+                                    resultCallback(NetworkResult<T>.failure(.parsingError(stringValue)))
+                                    return
+                            }
+                            let object = try Mapper<T>().map(JSON: resultDictionary)
+                            resultCallback(NetworkResult<T>.success(object))
+                        } catch {
+                            resultCallback(NetworkResult<T>.failure(.parsingError(error.localizedDescription)))
+                        }
                     }
                 case .failure(let error):
-                    resultCallback(NetworkResult<[T]>.failure(SessionManager.parse(error: error, with: response)))
+                    resultCallback(NetworkResult<T>.failure(.parsingError(error.localizedDescription)))
                 }
-        }
+                
+            })
     }
     
     private static func parse(error: Error, with response: DataResponse<Any>) -> NetworkError {

@@ -41,9 +41,6 @@ public protocol NetworkSessionManager {
     func perform<T: ImmutableMappable>(request value: NetworkRouting,
                                        resultCallback: @escaping (NetworkResult<T>) -> Void)
     
-    /// method for request with array of objects in response
-    func perform<T: ImmutableMappable>(request value: NetworkRouting,
-                                       resultCallback: @escaping (NetworkResult<[T]>) -> Void)
 }
 
 extension NetworkSessionManager {

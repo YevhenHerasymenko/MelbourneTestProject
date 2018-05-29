@@ -22,7 +22,7 @@ enum Endpoints: NetworkRouting {
         let baseURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl"
         switch self {
         case .facts:
-            return baseURL / "facts"
+            return baseURL / "facts.json"
         }
     }
     

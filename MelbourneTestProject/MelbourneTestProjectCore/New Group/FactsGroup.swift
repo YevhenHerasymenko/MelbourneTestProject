@@ -1,5 +1,5 @@
 //
-//  FactGroup.swift
+//  FactsGroup.swift
 //  MelbourneTestProjectCore
 //
 //  Created by Yevhen Herasymenko on 5/28/18.
@@ -7,7 +7,7 @@
 //
 import ObjectMapper
 
-public struct FactGroup: ImmutableMappable {
+public struct FactsGroup: ImmutableMappable {
     /// stream url
     public let title: String?
     public let rows: [Fact]

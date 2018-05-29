@@ -36,7 +36,7 @@
 		ABA1322020BC845700F53C9F /* StubSubscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1321F20BC845700F53C9F /* StubSubscriber.swift */; };
 		ABA1322220BC84AE00F53C9F /* ErrorFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322120BC84AE00F53C9F /* ErrorFlowTests.swift */; };
 		ABA1322820BC8C2200F53C9F /* Fact.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322720BC8C2200F53C9F /* Fact.swift */; };
-		ABA1322A20BC8CC200F53C9F /* FactGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322920BC8CC200F53C9F /* FactGroup.swift */; };
+		ABA1322A20BC8CC200F53C9F /* FactsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322920BC8CC200F53C9F /* FactsGroup.swift */; };
 		ABA1322C20BC976500F53C9F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322B20BC976500F53C9F /* Endpoint.swift */; };
 		ABA1322E20BC983600F53C9F /* FactsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA1322D20BC983600F53C9F /* FactsFlow.swift */; };
 		FDECF6763056948A6F80C743 /* Pods_MelbourneTestProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B5C2CED1AFACDD51030772 /* Pods_MelbourneTestProject.framework */; };
@@ -120,7 +120,7 @@
 		ABA1321F20BC845700F53C9F /* StubSubscriber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubSubscriber.swift; sourceTree = "<group>"; };
 		ABA1322120BC84AE00F53C9F /* ErrorFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorFlowTests.swift; sourceTree = "<group>"; };
 		ABA1322720BC8C2200F53C9F /* Fact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fact.swift; sourceTree = "<group>"; };
-		ABA1322920BC8CC200F53C9F /* FactGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactGroup.swift; sourceTree = "<group>"; };
+		ABA1322920BC8CC200F53C9F /* FactsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsGroup.swift; sourceTree = "<group>"; };
 		ABA1322B20BC976500F53C9F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		ABA1322D20BC983600F53C9F /* FactsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsFlow.swift; sourceTree = "<group>"; };
 		C5CEB4C1DBA55149563C6C99 /* Pods_MelbourneTestProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MelbourneTestProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,7 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA1322720BC8C2200F53C9F /* Fact.swift */,
-				ABA1322920BC8CC200F53C9F /* FactGroup.swift */,
+				ABA1322920BC8CC200F53C9F /* FactsGroup.swift */,
 			);
 			name = Models;
 			path = "New Group";
@@ -588,7 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABA1322A20BC8CC200F53C9F /* FactGroup.swift in Sources */,
+				ABA1322A20BC8CC200F53C9F /* FactsGroup.swift in Sources */,
 				ABA1320B20BC7DB500F53C9F /* ErrorFlow.swift in Sources */,
 				ABA1320320BC7CB600F53C9F /* Store.swift in Sources */,
 				ABA131FF20BC7C0D00F53C9F /* AppState.swift in Sources */,

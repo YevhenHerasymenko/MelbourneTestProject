@@ -9,12 +9,13 @@
 import UIKit
 import ReSwift
 import MelbourneTestProjectCore
+import Kingfisher
 
 class FactsCollectionViewController: UICollectionViewController {
     
     enum Status {
         case loading
-        case data(cells: [FactCollectionViewCell.Model])
+        case data(images: [URL?])
     }
     
     struct Model: ViewControllerModel {
@@ -30,7 +31,10 @@ class FactsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerNib()
+        if #available(iOS 10.0, *) {
+            collectionView?.prefetchDataSource = self
+        }
+        setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,9 +47,12 @@ class FactsCollectionViewController: UICollectionViewController {
         mainStore.unsubscribe(self)
     }
     
-    private func registerNib() {
+    private func setupCollectionView() {
         collectionView?.register(FactCollectionViewCell.nib,
                                  forCellWithReuseIdentifier: FactCollectionViewCell.identifier)
+        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+        }
     }
 
 }
@@ -54,20 +61,44 @@ class FactsCollectionViewController: UICollectionViewController {
 extension FactsCollectionViewController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        guard let model = model, case .data(let images) = model.status else {
+                return 0
+        }
+        return images.count
     }
     
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FactCollectionViewCell.identifier,
-                                                      for: indexPath)
+        guard let model = model,
+            case .data(let images) = model.status,
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FactCollectionViewCell.identifier,
+                                                          for: indexPath) as? FactCollectionViewCell else {
+                fatalError()
+        }
+        cell.model = FactCollectionViewCell.Model(
+            imageUrl: images[indexPath.row],
+            callback: { [unowned collectionView] in
+                collectionView.collectionViewLayout.invalidateLayout()
+        })
         return cell
+    }
+    
+}
+
+// MARK: - Prefetch
+extension FactsCollectionViewController: UICollectionViewDataSourcePrefetching {
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        guard let model = model,
+            case .data(let images) = model.status else {
+            return
+        }
+        let urls = indexPaths.compactMap { images[$0.row] }
+        ImagePrefetcher(urls: urls).start()
     }
     
 }

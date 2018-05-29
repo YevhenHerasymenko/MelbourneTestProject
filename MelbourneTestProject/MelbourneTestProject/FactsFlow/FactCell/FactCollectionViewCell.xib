@@ -20,6 +20,9 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8WB-8Y-Owc">
                         <rect key="frame" x="0.0" y="0.0" width="204" height="134"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="204" id="niR-db-cbK"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
@@ -32,6 +35,7 @@
             <size key="customSize" width="204" height="134"/>
             <connections>
                 <outlet property="imageView" destination="8WB-8Y-Owc" id="b4e-Pw-SQb"/>
+                <outlet property="widthConstraint" destination="niR-db-cbK" id="J6v-ed-00b"/>
             </connections>
             <point key="canvasLocation" x="102" y="34"/>
         </collectionViewCell>

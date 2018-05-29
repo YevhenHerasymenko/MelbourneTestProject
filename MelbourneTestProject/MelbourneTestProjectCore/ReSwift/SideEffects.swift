@@ -34,16 +34,3 @@ public enum SideEffects {
     }
     
 }
-
-// MARK: - Private
-// MARK: ImageDownloading
-extension SideEffects {
-    
-    static func downloadImage(with urls: [URL]) -> ReSwift.Store<AppState>.ActionCreator {
-        return { state, store in
-            ImagePrefetcher(urls: urls).start()
-            return nil
-        }
-    }
-    
-}

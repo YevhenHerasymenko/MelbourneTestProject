@@ -11,6 +11,7 @@ import ReSwift
 /// Struct for saving app data during launching
 public struct AppState: StateType {
 
+    public var factsState: FactsFlow.State
     /// State for keeping error information
     public var errorState: ErrorFlow.State
     /// List of available general actions
@@ -26,10 +27,12 @@ extension AppState {
         switch action {
         case AppState.Actions.clearState:
             return AppState(
+                factsState: FactsFlow.State(),
                 errorState: ErrorFlow.State()
             )
         default:
             return AppState(
+                factsState: FactsFlow.Reducer.handleAction(action: action, state: state?.factsState),
                 errorState: ErrorFlow.Reducer.handleAction(action: action, state: state?.errorState)
             )
         }

@@ -123,7 +123,8 @@ extension FactsCollectionViewController: UICollectionViewDelegateFlowLayout {
   }
 
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
+    mainStore.dispatch(FactsFlow.selectFact(by: indexPath.row))
+    performSegue(withIdentifier: Segue.showDetails.rawValue, sender: nil)
   }
 
 }

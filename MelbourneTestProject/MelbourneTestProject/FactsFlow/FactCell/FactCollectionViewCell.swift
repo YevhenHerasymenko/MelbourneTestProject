@@ -19,7 +19,6 @@ class FactCollectionViewCell: UICollectionViewCell, CellModelSupport {
 
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var noImageLabel: UILabel!
-  @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
 
   var model: Model! {
     didSet {
@@ -29,6 +28,8 @@ class FactCollectionViewCell: UICollectionViewCell, CellModelSupport {
 
   private func render() {
     if let url = model.imageUrl {
+      noImageLabel.isHidden = true
+      imageView.isHidden = false
       imageView.kf.setImage(with: url) { [weak self] (image, _, _, _)  in
         guard let strongSelf = self else {
           return
@@ -57,20 +58,6 @@ class FactCollectionViewCell: UICollectionViewCell, CellModelSupport {
   private func showNoImage() {
     noImageLabel.isHidden = false
     imageView.isHidden = true
-  }
-
-  override func prepareForReuse() {
-    super.prepareForReuse()
-    imageView.image = nil
-    imageView.isHidden = false
-    noImageLabel.isHidden = true
-  }
-
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    contentView.translatesAutoresizingMaskIntoConstraints = false
-    let screenWidth = UIScreen.main.bounds.width
-    widthConstraint.constant = screenWidth
   }
 
 }

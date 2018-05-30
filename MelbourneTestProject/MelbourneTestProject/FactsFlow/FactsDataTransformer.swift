@@ -23,3 +23,16 @@ struct FactsDataTransformer {
     }
     
 }
+
+struct FactDetailsDataTransformer {
+
+  static func transform(state: AppState) -> FactDetailsViewController.Model {
+    guard let data = state.factsState.factsGroup?.rows,
+      let selectedIndex = state.factsState.selectedIndex else {
+        fatalError()
+    }
+    let fact = data[selectedIndex]
+    return FactDetailsViewController.Model(image: fact.imageURL, title: fact.title, description: fact.description)
+  }
+
+}

@@ -20,9 +20,6 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8WB-8Y-Owc">
                         <rect key="frame" x="0.0" y="0.0" width="204" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="204" id="niR-db-cbK"/>
-                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-cE-KWP">
                         <rect key="frame" x="65.5" y="20" width="73.5" height="20"/>
@@ -56,7 +53,6 @@
             <connections>
                 <outlet property="imageView" destination="8WB-8Y-Owc" id="b4e-Pw-SQb"/>
                 <outlet property="noImageLabel" destination="GiA-cE-KWP" id="QN8-jT-o2p"/>
-                <outlet property="widthConstraint" destination="niR-db-cbK" id="J6v-ed-00b"/>
             </connections>
             <point key="canvasLocation" x="102" y="-3"/>
         </collectionViewCell>

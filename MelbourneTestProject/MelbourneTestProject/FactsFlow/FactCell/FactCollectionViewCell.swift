@@ -9,62 +9,68 @@
 import Kingfisher
 
 class FactCollectionViewCell: UICollectionViewCell, CellModelSupport {
-    
-    struct Model: CellModel {
-        let imageUrl: URL?
-        let callback: (() -> Void)
-    }
-    
-    static var identifier: String = String(describing: FactCollectionViewCell.self)
-    
-    @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var noImageLabel: UILabel!
-    @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
-    
-    var model: Model! {
-        didSet {
-            render()
-        }
-    }
-    
-    private func render() {
-        imageView.kf.indicatorType = .activity
-        if let url = model.imageUrl {
-            imageView.kf.setImage(with: url) { [weak self] (image, _, _, _)  in
-                let isExistImage = image != nil
-                self?.noImageLabel.isHidden = isExistImage
-                self?.imageView.isHidden = !isExistImage
-                guard isExistImage else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    //self?.model.callback()
-                }
-                
-            }
-        } else {
-            showNoImage()
-        }
 
+  struct Model: CellModel {
+    let imageUrl: URL?
+    let callback: ((CGFloat?) -> Void)
+  }
+
+  static var identifier: String = String(describing: FactCollectionViewCell.self)
+
+  @IBOutlet private weak var imageView: UIImageView!
+  @IBOutlet private weak var noImageLabel: UILabel!
+  @IBOutlet private weak var widthConstraint: NSLayoutConstraint!
+
+  var model: Model! {
+    didSet {
+      render()
     }
-    
-    private func showNoImage() {
-        noImageLabel.isHidden = false
-        imageView.isHidden = true
+  }
+
+  private func render() {
+    if let url = model.imageUrl {
+      imageView.kf.setImage(with: url) { [weak self] (image, _, _, _)  in
+        guard let strongSelf = self else {
+          return
+        }
+        guard let image = image else {
+          strongSelf.showNoImage()
+          strongSelf.model.callback(nil)
+          return
+        }
+        strongSelf.noImageLabel.isHidden = true
+        strongSelf.imageView.isHidden = false
+        if strongSelf.frame.width > image.size.width {
+          strongSelf.model.callback(image.size.height)
+        } else {
+          let proportion = strongSelf.frame.width / image.size.width
+          let height = image.size.height * proportion
+          strongSelf.model.callback(height)
+        }
+      }
+    } else {
+      showNoImage()
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-        imageView.isHidden = false
-        noImageLabel.isHidden = true
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        let screenWidth = UIScreen.main.bounds.width
-        widthConstraint.constant = screenWidth
-    }
+
+  }
+
+  private func showNoImage() {
+    noImageLabel.isHidden = false
+    imageView.isHidden = true
+  }
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    imageView.image = nil
+    imageView.isHidden = false
+    noImageLabel.isHidden = true
+  }
+
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    contentView.translatesAutoresizingMaskIntoConstraints = false
+    let screenWidth = UIScreen.main.bounds.width
+    widthConstraint.constant = screenWidth
+  }
 
 }
